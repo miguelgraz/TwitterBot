@@ -36,7 +36,7 @@ end
 @last = 0
 def update
   update_last = true
-  CLIENT.search('"Tyrion " -rt', since_id: @last, result_type: "recent").take(1).collect do |tweet|
+  CLIENT.search('"Tyrion " -rt', since_id: @last, result_type: "recent").take(100).collect do |tweet|
     if update_last
       @last = tweet.id
       update_last = false
