@@ -29,19 +29,22 @@ QUOTES = [
 ]
 
 get '/update' do
-  update
+  Thread.new do
+    update
+  end
   redirect "https://twitter.com/TyrionBot/with_replies"
 end
 
 @last = 479773156358770688
 def update
   update_last = true
-  CLIENT.search('"Tyrion " -rt', since_id: @last, result_type: "recent", count: 10).take(10).collect do |tweet|
+  CLIENT.search('"Tyrion " -rt', since_id: @last, result_type: "recent", count: 10).take(20).collect do |tweet|
     if update_last
       @last = tweet.id
       update_last = false
     end
     reply = "@#{tweet.user.screen_name} #{QUOTES.sample}"
     CLIENT.update(reply, in_reply_to_status: tweet) if reply.size <= 140
+    sleep 30
   end
 end
