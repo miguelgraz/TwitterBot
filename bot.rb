@@ -38,13 +38,13 @@ end
 @last = 479773156358770688
 def update
   update_last = true
-  CLIENT.search('"Tyrion " -rt', since_id: @last, result_type: "recent").take(20).collect do |tweet|
+  CLIENT.search('"Tyrion " -rt', since_id: @last, result_type: "recent").take(5).collect do |tweet|
     if update_last
       @last = tweet.id
       update_last = false
     end
     reply = "@#{tweet.user.screen_name} #{QUOTES.sample}"
     CLIENT.update(reply, in_reply_to_status: tweet) if reply.size <= 140
-    sleep 30
+    sleep 120
   end
 end
