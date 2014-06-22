@@ -35,7 +35,7 @@ get '/update' do
   redirect "https://twitter.com/TyrionBot/with_replies"
 end
 
-@last = 479773156358770688
+@last = 480737441985212416
 def update
   update_last = true
   CLIENT.search('"Tyrion " -rt', since_id: @last, result_type: "recent").take(5).collect do |tweet|
