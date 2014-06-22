@@ -29,10 +29,8 @@ QUOTES = [
 ]
 
 get '/update' do
-  Thread.new do
-    update
-  end
-  redirect "https://twitter.com/TyrionBot/with_replies"
+  update
+  puts 'updated'
 end
 
 @last = 480737441985212416
@@ -44,6 +42,7 @@ def update
       update_last = false
     end
     reply = "@#{tweet.user.screen_name} #{QUOTES.sample}"
+    puts "posting #{reply}" if reply.size <= 140
     CLIENT.update(reply, in_reply_to_status: tweet) if reply.size <= 140
     sleep 120
   end
