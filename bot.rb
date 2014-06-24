@@ -25,7 +25,7 @@ QUOTES = [
   "Let me give you some advice, bastard: Never forget what you are. Wear it like armor, and it can never be used to hurt you.",
   "Noseless and Handless, the Lannister Boys.",
   "The Gods give with one hand and take with the other.",
-  "Oh, ‘monster.’ Perhaps you should speak to me more softly then. Monsters are dangerous and, just now, kings are dying like flies."
+  "Oh, 'monster'. Perhaps you should speak to me more softly then. Monsters are dangerous and, just now, kings are dying like flies."
 ]
 
 get '/update' do
@@ -36,7 +36,7 @@ end
 @last = 480737441985212416
 def update
   update_last = true
-  CLIENT.search('"Tyrion " -rt', since_id: @last, result_type: "recent").take(5).collect do |tweet|
+  CLIENT.search('" Tyrion " -rt', since_id: @last, result_type: "recent").take(5).collect do |tweet|
     if update_last
       @last = tweet.id
       update_last = false
