@@ -21,8 +21,7 @@ QUOTES = [
   "Sleep is good...And books are better.",
   "Once you’ve accepted your flaws, no one can use them against you.",
   "My sister has mistaken me for a mushroom. She keeps me in the dark and feeds me shit.",
-  "I am not questioning your honor, I am denying its existence.",
-  "Let me give you some advice, bastard: Never forget what you are. Wear it like armor, and it can never be used to hurt you.",
+  "Let me give you some advice: Never forget what you are. Wear it like armor, and it can never be used to hurt you.",
   "Noseless and Handless, the Lannister Boys.",
   "The Gods give with one hand and take with the other.",
   "Oh, 'monster'. Perhaps you should speak to me more softly then. Monsters are dangerous and, just now, kings are dying like flies."
